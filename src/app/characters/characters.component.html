@@ -1,27 +1,24 @@
-<h2>Personajes poke Api</h2>
 
-
-<div>
-     <label>Buscar Pokemon</label>
+<div class="container">
+     <h2>Personajes poke Api</h2>
+     <label class="mx-2">Buscar Pokemon: </label>
      <input type="text" [(ngModel)]="name" />
-     <input value="search" type="submit" (click)="getPokemon()" />
+     <button class="btn btn-primary mx-2" type="submit" (click)="getPokemon()">Buscar</button>
      <div>
-         <table>
+         <table class="table">
              <thead>
-                 <th>id</th>
-                 <th>Nombre</th>
-                 <th>Imagen</th>
-                 <th>Ability</th>
+                 <th scope="col">id</th>
+                 <th scope="col">Nombre</th>
+                 <th scope="col">Ability</th>
              </thead>
              <tbody>
                  <tr *ngIf="!found; else find;">
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
-                    <td>-</td>
                  </tr>
                  <ng-template #find>
-                     <tr x>
+                     <tr>
                          <td *ngFor="let a of arr;">{{a}}</td>
                          <td><img [src]='image' /></td>
                      </tr>

@@ -23,16 +23,16 @@ export class CharactersComponent implements OnInit {
   getPokemon() {
     try {
       this.characterService.getDetails(this.name).subscribe((data:any) => { 
-      
+        
         this.name = data.name;
         this.id = data.id;
         this.image = data.sprites.front_default;
-        this.ability = data.ability.name;
+        this.ability = data.abilities[0].ability.name;
         this.found = true;
         
-        this.arr = [this.id, this.name, this.image, this.ability];
+        this.arr = [this.id, this.name, this.ability];
         
-        });
+      });
     } catch (e) {
       this.name = "No se encontró pokémon"
     }
