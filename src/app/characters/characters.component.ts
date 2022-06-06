@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CharacterService } from '../characters.service';
+import { CharacterService } from '../services/characters.service';
 
 @Component({
   selector: 'app-characters',
