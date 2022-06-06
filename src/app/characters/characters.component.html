@@ -1,18 +1,30 @@
-<h2>Personas poke Api</h2>
+<h2>Personajes poke Api</h2>
 
 
 <div>
+     <input value="search" type="submit" (click)="getPokemon()" />
      <div>
-         <img [src]="peronas.img" alt="">
-     </div>
-     <div>
-         <h3>
-
-         </h3>
-     </div>
-     <div>
-         <p>
-
-         </p>
+         <table>
+             <thead>
+                 <th>id</th>
+                 <th>Nombre</th>
+                 <th>Imagen</th>
+                 <th>Ability</th>
+             </thead>
+             <tbody>
+                 <tr *ngIf="!found; else find;">
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                 </tr>
+                 <ng-template #find>
+                     <tr x>
+                         <td *ngFor="let a of arr;">{{a}}</td>
+                         <td><img [src]='image' /></td>
+                     </tr>
+                 </ng-template>
+             </tbody>
+         </table>
      </div>
 </div>
